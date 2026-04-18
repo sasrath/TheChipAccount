@@ -1,0 +1,320 @@
+{
+  "_comment": "Citation database. Every numeric claim in chips.json and processes.json carries a sourceId referencing an entry here.",
+  "_accessedOn": "2026-04-17",
+  "sources": [
+    {
+      "id": "bardon2020",
+      "title": "DTCO including Sustainability: Power-Performance-Area-Cost-Environmental score (PPACE) Analysis for Logic Technologies",
+      "org": "IMEC / IEEE IEDM",
+      "year": 2020,
+      "authors": "M. Garcia Bardon, P. Wuytens, L.-Å. Ragnarsson, et al.",
+      "url": "https://doi.org/10.1109/IEDM13553.2020.9372004",
+      "accessedOn": "2026-04-17",
+      "type": "paper",
+      "keyFindings": "From N28 to N2, per-wafer increases: electricity x3.46, ultrapure water x2.3, GHG x2.5. Environmental cost dominated by etch and lithography at advanced nodes. NF3 abatement factor assumed 95%."
+    },
+    {
+      "id": "imec-digest-2025",
+      "title": "How Can We Reduce Environmental Impact in Chip Manufacturing?",
+      "org": "IMEC / Semiconductor Digest",
+      "year": 2025,
+      "authors": "Emily Gallagher (IMEC)",
+      "url": "https://www.semiconductor-digest.com/how-can-we-reduce-environmental-impact-in-chip-manufacturing/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "An advanced N2 logic node generates approximately 1,600 kg CO2eq per wafer. Dry etch and lithography together contribute nearly 40% of total emissions. Scope 2 (electricity) emissions are ~60% of total carbon footprint at advanced nodes. IC manufacturing accounts for ~185 Mt CO2e/year globally."
+    },
+    {
+      "id": "imec-ssts",
+      "title": "Sustainable Semiconductor Technologies and Systems (SSTS) Program",
+      "org": "IMEC",
+      "year": 2025,
+      "url": "https://www.imec-int.com/en/expertise/cmos-advanced/sustainable-semiconductor-technologies-and-systems-ssts",
+      "accessedOn": "2026-04-17",
+      "type": "report",
+      "keyFindings": "IC manufacturing projected to reach 3% of global GHG emissions by 2040 if unchecked. NF3 has GWP 17,000x higher than CO2 (100-yr horizon). Cleaning and etching identified as primary GHG-emitting process families."
+    },
+    {
+      "id": "hu2023",
+      "title": "Environmental data and facts in the semiconductor manufacturing industry: An unexpected high water and energy consumption situation",
+      "org": "ScienceDirect / Sustainable Production and Consumption",
+      "year": 2023,
+      "authors": "Surveyed 28 semiconductor corporations' sustainability reports",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2666445323000041",
+      "accessedOn": "2026-04-17",
+      "type": "paper",
+      "keyFindings": "2021 industry averages (normalized per cm2 of silicon): water 8.22 L/cm2, energy 1.15 kWh/cm2, GHG 0.84 kg CO2eq/cm2. Total 2021 industry footprint: 7.89x10^8 m3 water, 1.49x10^11 kWh energy, 7.15x10^7 tons CO2eq."
+    },
+    {
+      "id": "tsmc2024-esg",
+      "title": "2024 TSMC Sustainability Report",
+      "org": "TSMC",
+      "year": 2024,
+      "url": "https://esg.tsmc.com/file/public/2024-TSMC-Sustainability-Report-e.pdf",
+      "accessedOn": "2026-04-17",
+      "type": "report",
+      "keyFindings": "Wastewater recycling exceeded 140 million m3 in 2024. Water recycling rate >95%. Unit wafer water footprint reduced vs 2020 for both mature and advanced fabs. Targets 60% renewable energy by 2030, RE100 by 2040."
+    },
+    {
+      "id": "eetimes-imec-2020",
+      "title": "The Environmental Footprint of Logic CMOS Technologies",
+      "org": "EE Times (covering IMEC IEDM 2020)",
+      "year": 2020,
+      "url": "https://www.eetimes.com/the-environmental-footprint-of-logic-cmos-technologies/2/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Ultrapure water used for rinsing (wet benches) and CMP steps, which double in count from node to node. NF3 and SF6 are main F-gas contributors. EUV consumes more power per tool but reduces multi-patterning steps; net energy depends on throughput."
+    },
+    {
+      "id": "epa-semi",
+      "title": "Semiconductor Industry — Fluorinated Gas Partnership",
+      "org": "US EPA",
+      "year": 2024,
+      "url": "https://www.epa.gov/eps-partnership/semiconductor-industry",
+      "accessedOn": "2026-04-17",
+      "type": "report",
+      "keyFindings": "Fluorinated GHGs used: CF4, C2F6, C3F8, c-C4F8, CHF3, CH3F, CH2F2, NF3, SF6. 10-80% of F-gas passes through unreacted without abatement. Facilities emitting ≥25,000 tCO2e/year from F-gas must report under 40 CFR Part 98 Subpart I."
+    },
+    {
+      "id": "sia-2023-plasma",
+      "title": "Plasma Etch and Deposition White Paper",
+      "org": "Semiconductor Industry Association (SIA)",
+      "year": 2023,
+      "url": "https://www.semiconductors.org/wp-content/uploads/2023/06/FINAL-Plasma-Etch-and-Deposition-White-Paper.pdf",
+      "accessedOn": "2026-04-17",
+      "type": "report",
+      "keyFindings": "NF3 GWP100 = 17,400. 3D NAND etching involves >100 dielectric layers, projected >200. SSD manufacturing emits 6-7x more Scope 1+2 GHG than HDD. Ratio of gases emitted vs used has dropped significantly 2000-2020 due to abatement, but plateauing 2010-2020."
+    },
+    {
+      "id": "pirson-2023",
+      "title": "Fluorinated greenhouse gas and net-zero emissions from the electronics industry: the proof is in the pudding",
+      "org": "Carbon Management (Taylor & Francis)",
+      "year": 2023,
+      "authors": "T. Pirson et al.",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/17583004.2023.2179941",
+      "accessedOn": "2026-04-17",
+      "type": "paper",
+      "keyFindings": "FC emissions are 80-90% of uncontrolled direct (Scope 1) emissions. 85-90% of FC emissions (in CO2e) originate from plasma-based etching and cleaning. SF6 GWP100 = 25,200. CF4 atmospheric lifetime ~50,000 years."
+    },
+    {
+      "id": "interface-eu-2024",
+      "title": "Semiconductor Emission Explorer: Tracking GHG Emissions from Chip Production (2015-2023)",
+      "org": "Interface EU",
+      "year": 2024,
+      "url": "https://www.interface-eu.org/publications/semiconductor-emission-explorer",
+      "accessedOn": "2026-04-17",
+      "type": "report",
+      "keyFindings": "NF3 accounted for 22% of total F-gas emissions in 2020. Memory chip production requires higher amounts of F-gases due to high aspect ratio etching (3D NAND). F-gases account for 80-90% of direct emissions in a fab."
+    },
+    {
+      "id": "nvidia-h100-spec",
+      "title": "NVIDIA Hopper Architecture In-Depth",
+      "org": "NVIDIA Developer Blog",
+      "year": 2022,
+      "url": "https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "GH100 (H100): TSMC 4N (custom N4) process, 80 billion transistors, 814 mm2 die. 700W SXM5 TDP."
+    },
+    {
+      "id": "apple-a18-spec",
+      "title": "Apple A18 — Wikipedia (compiled from Apple and TechInsights data)",
+      "org": "Wikipedia / TechInsights",
+      "year": 2024,
+      "url": "https://en.wikipedia.org/wiki/Apple_A18",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "A18: 90 mm2, A18 Pro: 105 mm2. Both on TSMC N3E. A18 Pro estimated >20 billion transistors."
+    },
+    {
+      "id": "zen4-spec",
+      "title": "Zen 4 — Wikipedia (compiled from AMD and TechPowerUp)",
+      "org": "Wikipedia / TechPowerUp",
+      "year": 2022,
+      "url": "https://en.wikipedia.org/wiki/Zen_4",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Zen 4 CCD (used in Ryzen 7000 and EPYC Genoa): 66.3 mm2 (some sources 70 mm2), TSMC N5, 6.5 billion transistors per CCD. EPYC Genoa can contain up to 12 CCDs + a ~397 mm2 IOD on N6."
+    },
+    {
+      "id": "snapdragon-spec",
+      "title": "Qualcomm Snapdragon 8 Gen 3 specs",
+      "org": "NanoReview / XDA",
+      "year": 2023,
+      "url": "https://nanoreview.net/en/soc/qualcomm-snapdragon-8-gen-3",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Snapdragon 8 Gen 3: TSMC N4P, 8-core CPU (1x Cortex-X4 + 5x A720 + 2x A520). Die size estimated ~120 mm2."
+    },
+    {
+      "id": "apple-m4-spec",
+      "title": "Apple M4 Architecture and Die Size Analysis",
+      "org": "TechInsights / Wccftech",
+      "year": 2024,
+      "url": "https://wccftech.com/snapdragon-x-elite-die-shot-compared-with-apple-m4/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Apple M4 is fabricated on TSMC's N3E 3nm process. It features 28 billion transistors and has a measured die area of approximately 165.9 mm^2. The architecture utilizes 10 CPU cores and a 10-core GPU, supported by unified memory."
+    },
+    {
+      "id": "nvidia-gb202-spec",
+      "title": "NVIDIA reveals die sizes for GB200 Blackwell GPUs",
+      "org": "VideoCardz / HardwareLuxx",
+      "year": 2025,
+      "url": "https://videocardz.com/newz/nvidia-reveals-die-sizes-for-gb200-blackwell-gpus-gb202-is-750mm%C2%B2-features-92-2b-transistors",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The flagship Blackwell GPU die (GB202) features a 750 mm^2 die size with 92.2 billion transistors. It is built on a custom TSMC 4NP node. For enterprise B200 configurations, two dies are connected via a 10 TB/s interconnect to pack 208 billion transistors."
+    },
+    {
+      "id": "intel-meteor-lake-spec",
+      "title": "Meteor Lake - Intel 4 Node and Die Size Details",
+      "org": "IEEE VLSI Symposium / Tom's Hardware / Wikipedia",
+      "year": 2023,
+      "url": "https://en.wikipedia.org/wiki/Meteor_Lake",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Meteor Lake compute tile is fabricated on the 'Intel 4' node (Intel's first EUV node, 7nm class). The CPU compute tile measures 69.67 mm^2. It is packaged via Foveros 3D packaging alongside graphics, SoC, and I/O tiles."
+    },
+    {
+      "id": "snapdragon-x-elite-spec",
+      "title": "Qualcomm Snapdragon X Elite Die Exposed and Annotated",
+      "org": "TechPowerUp",
+      "year": 2024,
+      "url": "https://www.techpowerup.com/327130/qualcomm-snapdragon-x-elite-die-exposed-and-annotated",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Snapdragon X Elite die measures 169.6 mm2 and is fabricated using TSMC's N4P 4 nm-class process. It features a 12-core Oryon CPU and a 45 TOPS NPU."
+    },
+    {
+      "id": "tensor-g4-spec",
+      "title": "Google Tensor G4 - Digital Floorplan Analysis & Spec Overview",
+      "org": "Wikipedia / TechInsights",
+      "year": 2024,
+      "url": "https://en.wikipedia.org/wiki/Google_Tensor",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Fabricated on Samsung's 4nm process (4LPP+). Features 1x Cortex-X4, 3x Cortex-A720, and 4x Cortex-A520 cores alongside a dedicated third-generation Tensor Processing Unit for edge AI tasks."
+    },
+    {
+      "id": "amd-mi300x-spec",
+      "title": "AMD MI300X vs NVIDIA H200: Memory, Performance, and Cost for AI Workloads",
+      "org": "Spheron Network / AMD",
+      "year": 2024,
+      "url": "https://www.spheron.network/blog/amd-mi300x-vs-nvidia-h200/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The AMD Instinct MI300X features 153 billion transistors across 8 GPU compute dies (5nm) and 3 I/O dies (6nm). It utilizes 192 GB of HBM3 memory providing 5.3 TB/s of bandwidth, designed specifically for heavy AI training and inference workloads with a 750W TDP."
+    },
+    {
+      "id": "google-tpu-v5p-spec",
+      "title": "TPU v5p - Google Cloud Documentation",
+      "org": "Google Cloud",
+      "year": 2024,
+      "url": "https://docs.cloud.google.com/tpu/docs/v5p",
+      "accessedOn": "2026-04-17",
+      "type": "official_doc",
+      "keyFindings": "TPU v5p delivers 459 TFLOPs of peak compute (BF16/FP8) per chip. A full TPU v5p Pod contains 8,960 chips connected via a 3D torus topology. Each chip includes 95 GiB of HBM capacity with 2575 GiBps bandwidth."
+    },
+    {
+      "id": "nvidia-ad102-spec",
+      "title": "NVIDIA AD102 'Ada' Packs Over 75 Billion Transistors",
+      "org": "TechPowerUp",
+      "year": 2022,
+      "url": "https://www.techpowerup.com/298836/nvidia-ad102-ada-packs-over-75-billion-transistors",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "NVIDIA's AD102 GPU is built on the TSMC N5 (5 nm EUV) node. It features a transistor count of 76.3 billion and a die area of 608 mm^2. The N5 node offers 134 MTr/mm^2, significantly increasing density over the previous 8nm node."
+    },
+    {
+      "id": "apple-m3max-spec",
+      "title": "Transistor count: Microprocessors",
+      "org": "Wikipedia / Apple Press Release",
+      "year": 2023,
+      "url": "https://en.wikipedia.org/wiki/Transistor_count",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Apple M3 Max is a 16-core 64-bit ARM64 SoC fabricated on TSMC's 3nm (N3B) process. It contains 92,000,000,000 transistors. Die size is estimated around 320 mm^2."
+    },
+    {
+      "id": "intel-raptor-spec",
+      "title": "Raptor Lake Architecture and Die Details",
+      "org": "Wikipedia / Intel Ark",
+      "year": 2022,
+      "url": "https://en.wikipedia.org/wiki/Raptor_Lake",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Raptor Lake is fabricated using the Intel 7 process (formerly 10nm Enhanced SuperFin). The top-end desktop die (e.g., 13900K) features 8 P-cores and 16 E-cores. Transistor count is approximately 14.2 billion on a 257 mm^2 die."
+    },
+    {
+      "id": "cerebras-wse3-spec",
+      "title": "Cerebras Wafer-Scale Engine: When to Choose Alternative AI Architecture",
+      "org": "Introl / EE Times",
+      "year": 2024,
+      "url": "https://introl.com/blog/cerebras-wafer-scale-engine-cs3-alternative-ai-architecture-guide-2025",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The WSE-3 is built on a TSMC 5nm process node. It occupies an entire usable wafer with a die area of 46,225 mm^2 (21.5 cm x 21.5 cm). It contains 4 trillion transistors, 900,000 AI cores, and 44 GB of on-chip SRAM."
+    },
+    {
+      "id": "amd-vcache-spec",
+      "title": "AMD's 3D V-Cache Deep Dive",
+      "org": "AnandTech",
+      "year": 2022,
+      "url": "https://www.anandtech.com/show/17337/amd-ryzen-7-5800x3d-review-96mb-of-l3-3d-v-cache",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "AMD's 3D V-Cache SRAM die is built on TSMC's 7nm node. It measures 36 mm^2 and contains 4.7 billion transistors. It is bonded via direct copper-to-copper hybrid bonding over the Zen 3/Zen 4 compute dies."
+    },
+    {
+      "id": "tesla-d1-spec",
+      "title": "Tesla Details Dojo Supercomputer Architecture",
+      "org": "Hot Chips Symposium / Tom's Hardware",
+      "year": 2022,
+      "url": "https://www.tomshardware.com/news/tesla-dojo-supercomputer-chip",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Tesla D1 chip is fabricated on TSMC's 7nm node. It packs 50 billion transistors into a massive 645 mm^2 die. It is optimized purely for machine learning workloads, bypassing traditional caches for high-speed SRAM."
+    },
+    {
+      "id": "apple-a17-spec",
+      "title": "Transistor count: Mobile Processors",
+      "org": "Wikipedia / TechInsights",
+      "year": 2023,
+      "url": "https://en.wikipedia.org/wiki/Transistor_count",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Apple A17 Pro (used in iPhone 15 Pro) is built on TSMC's 3nm process (N3B). It contains 19 billion transistors and has a measured die area of 103.8 mm^2, resulting in a density of approximately 183 MTr/mm^2."
+    },
+    {
+      "id": "mediatek-9300-spec",
+      "title": "MediaTek Dimensity 9300 All-Big-Core Architecture",
+      "org": "MediaTek Press / XDA",
+      "year": 2023,
+      "url": "https://www.xda-developers.com/mediatek-dimensity-9300/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "Built on TSMC's N4P (4nm-class) process, featuring a unique CPU configuration of 4x Cortex-X4 and 4x Cortex-A720. Die size is estimated at 135 mm^2 with 22.7 billion transistors."
+    },
+    {
+      "id": "samsung-exynos-spec",
+      "title": "Samsung Exynos 2400 Deep Dive",
+      "org": "SamMobile",
+      "year": 2024,
+      "url": "https://www.sammobile.com/news/exynos-2400-specs-features-official/",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Exynos 2400 utilizes Samsung Foundry's 4LPP+ node. It features a 10-core CPU configuration and an RDNA3-based Xclipse 940 GPU, containing roughly 18.5 billion transistors."
+    },
+    {
+      "id": "intel-alder-spec",
+      "title": "Intel Alder Lake Architecture and Die Sizes",
+      "org": "WikiChip / Intel",
+      "year": 2022,
+      "url": "https://en.wikichip.org/wiki/intel/microarchitectures/alder_lake",
+      "accessedOn": "2026-04-17",
+      "type": "article",
+      "keyFindings": "The Alder Lake-P (mobile) die is built on the Intel 7 node. It measures 217 mm^2 and contains an estimated 10.5 billion transistors, packing 6 Golden Cove P-cores and 8 Gracemont E-cores."
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="105" failures="0" errors="0" time="0.932">
+  <testsuite name="chips.json" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.12" tests="18">
+    <testcase classname="chips.json loads at least one chip" name="chips.json loads at least one chip" time="0.001">
+    </testcase>
+    <testcase classname="chips.json every chip has required string fields" name="chips.json every chip has required string fields" time="0.004">
+    </testcase>
+    <testcase classname="chips.json every chip has valid numeric fields" name="chips.json every chip has valid numeric fields" time="0.003">
+    </testcase>
+    <testcase classname="chips.json every chip has a non-empty processMix" name="chips.json every chip has a non-empty processMix" time="0.014">
+    </testcase>
+    <testcase classname="chips.json chip IDs are unique" name="chips.json chip IDs are unique" time="0">
+    </testcase>
+    <testcase classname="chips.json getChip returns correct chip by id" name="chips.json getChip returns correct chip by id" time="0">
+    </testcase>
+    <testcase classname="chips.json getChip returns undefined for unknown id" name="chips.json getChip returns undefined for unknown id" time="0">
+    </testcase>
+    <testcase classname="processes.json loads at least one process" name="processes.json loads at least one process" time="0">
+    </testcase>
+    <testcase classname="processes.json every process has valid perStepPerWafer metrics" name="processes.json every process has valid perStepPerWafer metrics" time="0.002">
+    </testcase>
+    <testcase classname="processes.json process IDs are unique" name="processes.json process IDs are unique" time="0">
+    </testcase>
+    <testcase classname="processes.json getProcess returns correct process" name="processes.json getProcess returns correct process" time="0">
+    </testcase>
+    <testcase classname="sources.json loads at least one source" name="sources.json loads at least one source" time="0">
+    </testcase>
+    <testcase classname="sources.json every source has required fields" name="sources.json every source has required fields" time="0.003">
+    </testcase>
+    <testcase classname="sources.json source IDs are unique" name="sources.json source IDs are unique" time="0">
+    </testcase>
+    <testcase classname="sources.json getSource returns correct source" name="sources.json getSource returns correct source" time="0">
+    </testcase>
+    <testcase classname="cross-reference integrity every chip.processMix references a known processId" name="cross-reference integrity every chip.processMix references a known processId" time="0.003">
+    </testcase>
+    <testcase classname="cross-reference integrity every chip.specSourceId references a known sourceId (when set)" name="cross-reference integrity every chip.specSourceId references a known sourceId (when set)" time="0">
+    </testcase>
+    <testcase classname="cross-reference integrity every process metric sourceId references a known source" name="cross-reference integrity every process metric sourceId references a known source" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="computeFootprint — output shape" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.032" tests="17">
+    <testcase classname="computeFootprint — output shape returns all required fields" name="computeFootprint — output shape returns all required fields" time="0.001">
+    </testcase>
+    <testcase classname="computeFootprint — output shape totals contain all four metrics plus ghgTotal" name="computeFootprint — output shape totals contain all four metrics plus ghgTotal" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — output shape ghgTotalKgCo2e = ghgScope2 + pfas (totals)" name="computeFootprint — output shape ghgTotalKgCo2e = ghgScope2 + pfas (totals)" time="0.001">
+    </testcase>
+    <testcase classname="computeFootprint — sanity ranges (per-die) all per-die metrics are positive" name="computeFootprint — sanity ranges (per-die) all per-die metrics are positive" time="0.002">
+    </testcase>
+    <testcase classname="computeFootprint — sanity ranges (per-die) goodDiesPerWafer is positive for all chips" name="computeFootprint — sanity ranges (per-die) goodDiesPerWafer is positive for all chips" time="0.001">
+    </testcase>
+    <testcase classname="computeFootprint — sanity ranges (per-die) totalSteps is positive for all chips" name="computeFootprint — sanity ranges (per-die) totalSteps is positive for all chips" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — sanity ranges (per-die) per-die water is less than per-wafer water" name="computeFootprint — sanity ranges (per-die) per-die water is less than per-wafer water" time="0.001">
+    </testcase>
+    <testcase classname="computeFootprint — sanity ranges (per-die) sourceIds is non-empty" name="computeFootprint — sanity ranges (per-die) sourceIds is non-empty" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) ref-n2 and ref-n28 exist in chips.json" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) ref-n2 and ref-n28 exist in chips.json" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 per-wafer GHG within ±20% of IMEC 1,600 kg CO2e target" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 per-wafer GHG within ±20% of IMEC 1,600 kg CO2e target" time="0.001">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 per-wafer water within ±20% of Hu2023 5,750 L target" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 per-wafer water within ±20% of Hu2023 5,750 L target" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 water scaling 1.8–3.0x (Bardon2020 target 2.3x)" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 water scaling 1.8–3.0x (Bardon2020 target 2.3x)" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 energy scaling 2.0–5.0x (Bardon2020 target 3.46x)" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 energy scaling 2.0–5.0x (Bardon2020 target 3.46x)" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 GHG scaling 1.8–4.0x (Bardon2020 target 2.5x)" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N28→N2 GHG scaling 1.8–4.0x (Bardon2020 target 2.5x)" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 Scope-2 share of total GHG is 40–80% (IMEC target ~60%)" name="computeFootprint — IMEC calibration (ref-n2, ref-n28) N2 Scope-2 share of total GHG is 40–80% (IMEC target ~60%)" time="0">
+    </testcase>
+    <testcase classname="computeFootprint — byFamily breakdown byFamily metrics sum ≤ perWafer totals (rounding noise allowed)" name="computeFootprint — byFamily breakdown byFamily metrics sum ≤ perWafer totals (rounding noise allowed)" time="0.002">
+    </testcase>
+    <testcase classname="computeFootprint — byFamily breakdown byFamily keys are recognised process families" name="computeFootprint — byFamily breakdown byFamily keys are recognised process families" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="ConfidenceSchema" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.024" tests="30">
+    <testcase classname="ConfidenceSchema accepts &apos;high&apos;" name="ConfidenceSchema accepts &apos;high&apos;" time="0.001">
+    </testcase>
+    <testcase classname="ConfidenceSchema accepts &apos;medium&apos;" name="ConfidenceSchema accepts &apos;medium&apos;" time="0">
+    </testcase>
+    <testcase classname="ConfidenceSchema accepts &apos;low&apos;" name="ConfidenceSchema accepts &apos;low&apos;" time="0">
+    </testcase>
+    <testcase classname="ConfidenceSchema accepts &apos;estimated&apos;" name="ConfidenceSchema accepts &apos;estimated&apos;" time="0">
+    </testcase>
+    <testcase classname="ConfidenceSchema rejects unknown confidence" name="ConfidenceSchema rejects unknown confidence" time="0.004">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;lithography&apos;" name="ProcessFamilySchema accepts &apos;lithography&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;etch&apos;" name="ProcessFamilySchema accepts &apos;etch&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;deposition&apos;" name="ProcessFamilySchema accepts &apos;deposition&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;cmp&apos;" name="ProcessFamilySchema accepts &apos;cmp&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;clean&apos;" name="ProcessFamilySchema accepts &apos;clean&apos;" time="0.001">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;implant&apos;" name="ProcessFamilySchema accepts &apos;implant&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;metrology&apos;" name="ProcessFamilySchema accepts &apos;metrology&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema accepts &apos;thermal&apos;" name="ProcessFamilySchema accepts &apos;thermal&apos;" time="0">
+    </testcase>
+    <testcase classname="ProcessFamilySchema rejects unknown family" name="ProcessFamilySchema rejects unknown family" time="0">
+    </testcase>
+    <testcase classname="ChipSchema accepts a valid chip" name="ChipSchema accepts a valid chip" time="0.001">
+    </testcase>
+    <testcase classname="ChipSchema accepts a chip with optional fields" name="ChipSchema accepts a chip with optional fields" time="0">
+    </testcase>
+    <testcase classname="ChipSchema rejects yield outside [0,1]" name="ChipSchema rejects yield outside [0,1]" time="0">
+    </testcase>
+    <testcase classname="ChipSchema rejects empty processMix" name="ChipSchema rejects empty processMix" time="0">
+    </testcase>
+    <testcase classname="ChipSchema rejects missing required field" name="ChipSchema rejects missing required field" time="0.001">
+    </testcase>
+    <testcase classname="ProcessSchema accepts a valid process" name="ProcessSchema accepts a valid process" time="0">
+    </testcase>
+    <testcase classname="ProcessSchema rejects a negative metric value" name="ProcessSchema rejects a negative metric value" time="0">
+    </testcase>
+    <testcase classname="ProcessSchema rejects unknown family" name="ProcessSchema rejects unknown family" time="0">
+    </testcase>
+    <testcase classname="SourceSchema accepts a valid source" name="SourceSchema accepts a valid source" time="0">
+    </testcase>
+    <testcase classname="SourceSchema rejects an invalid URL" name="SourceSchema rejects an invalid URL" time="0">
+    </testcase>
+    <testcase classname="SourceSchema rejects an unknown type" name="SourceSchema rejects an unknown type" time="0">
+    </testcase>
+    <testcase classname="SourceSchema accepts official_doc type" name="SourceSchema accepts official_doc type" time="0">
+    </testcase>
+    <testcase classname="SourceSchema accepts optional fields (authors, keyFindings)" name="SourceSchema accepts optional fields (authors, keyFindings)" time="0">
+    </testcase>
+    <testcase classname="ChipsFileSchema rejects chips array with duplicate IDs (cross-ref — schema allows, data.test catches)" name="ChipsFileSchema rejects chips array with duplicate IDs (cross-ref — schema allows, data.test catches)" time="0">
+    </testcase>
+    <testcase classname="ProcessesFileSchema accepts a minimal processes file" name="ProcessesFileSchema accepts a minimal processes file" time="0">
+    </testcase>
+    <testcase classname="SourcesFileSchema accepts a minimal sources file" name="SourcesFileSchema accepts a minimal sources file" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="waterToBathtubs" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.021" tests="27">
+    <testcase classname="waterToBathtubs very small amounts show bottles" name="waterToBathtubs very small amounts show bottles" time="0">
+    </testcase>
+    <testcase classname="waterToBathtubs 1–9 bathtubs range" name="waterToBathtubs 1–9 bathtubs range" time="0">
+    </testcase>
+    <testcase classname="waterToBathtubs ≥10 bathtubs returns rounded integer" name="waterToBathtubs ≥10 bathtubs returns rounded integer" time="0">
+    </testcase>
+    <testcase classname="waterToHouseholdDays less than a day shows hours" name="waterToHouseholdDays less than a day shows hours" time="0">
+    </testcase>
+    <testcase classname="waterToHouseholdDays multiple days" name="waterToHouseholdDays multiple days" time="0">
+    </testcase>
+    <testcase classname="energyToACHours less than an hour shows minutes" name="energyToACHours less than an hour shows minutes" time="0">
+    </testcase>
+    <testcase classname="energyToACHours hours range (1–23)" name="energyToACHours hours range (1–23)" time="0">
+    </testcase>
+    <testcase classname="energyToACHours multiple days" name="energyToACHours multiple days" time="0">
+    </testcase>
+    <testcase classname="energyToHouseholdDays less than a day shows hours" name="energyToHouseholdDays less than a day shows hours" time="0">
+    </testcase>
+    <testcase classname="energyToHouseholdDays multiple days" name="energyToHouseholdDays multiple days" time="0">
+    </testcase>
+    <testcase classname="ghgToCarKm less than 1 km shows metres" name="ghgToCarKm less than 1 km shows metres" time="0">
+    </testcase>
+    <testcase classname="ghgToCarKm short distances show decimal km" name="ghgToCarKm short distances show decimal km" time="0">
+    </testcase>
+    <testcase classname="ghgToCarKm long distances show rounded km" name="ghgToCarKm long distances show rounded km" time="0">
+    </testcase>
+    <testcase classname="ghgToFlightFraction tiny fraction shows percentage with many decimals" name="ghgToFlightFraction tiny fraction shows percentage with many decimals" time="0">
+    </testcase>
+    <testcase classname="ghgToFlightFraction partial flight shows percentage" name="ghgToFlightFraction partial flight shows percentage" time="0">
+    </testcase>
+    <testcase classname="ghgToFlightFraction multiple flights shows multiplier" name="ghgToFlightFraction multiple flights shows multiplier" time="0">
+    </testcase>
+    <testcase classname="formatMetric values ≥1000 use locale formatting" name="formatMetric values ≥1000 use locale formatting" time="0.008">
+    </testcase>
+    <testcase classname="formatMetric values 100–999 use 0 decimal places by default" name="formatMetric values 100–999 use 0 decimal places by default" time="0">
+    </testcase>
+    <testcase classname="formatMetric values 10–99 use 1 decimal place by default" name="formatMetric values 10–99 use 1 decimal place by default" time="0">
+    </testcase>
+    <testcase classname="formatMetric values 1–9 use 1 decimal place by default" name="formatMetric values 1–9 use 1 decimal place by default" time="0">
+    </testcase>
+    <testcase classname="formatMetric values 0.01–0.99 use 2 decimal places" name="formatMetric values 0.01–0.99 use 2 decimal places" time="0">
+    </testcase>
+    <testcase classname="formatMetric very small values use 3 decimal places" name="formatMetric very small values use 3 decimal places" time="0">
+    </testcase>
+    <testcase classname="formatMetric custom decimals override default" name="formatMetric custom decimals override default" time="0">
+    </testcase>
+    <testcase classname="getComparison waterL comparison is non-empty string" name="getComparison waterL comparison is non-empty string" time="0">
+    </testcase>
+    <testcase classname="getComparison energyKwh comparison is non-empty string" name="getComparison energyKwh comparison is non-empty string" time="0">
+    </testcase>
+    <testcase classname="getComparison ghgTotalKgCo2e comparison is non-empty string" name="getComparison ghgTotalKgCo2e comparison is non-empty string" time="0">
+    </testcase>
+    <testcase classname="getComparison pfasKgCo2e comparison is non-empty string" name="getComparison pfasKgCo2e comparison is non-empty string" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="POST /api/revalidate" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.614" tests="7">
+    <testcase classname="POST /api/revalidate returns 200 with revalidated:true when no secret is configured" name="POST /api/revalidate returns 200 with revalidated:true when no secret is configured" time="0.322">
+    </testcase>
+    <testcase classname="POST /api/revalidate GET /api/revalidate returns 405" name="POST /api/revalidate GET /api/revalidate returns 405" time="0.003">
+    </testcase>
+    <testcase classname="POST /api/explain returns 400 for missing chipId" name="POST /api/explain returns 400 for missing chipId" time="0.018">
+    </testcase>
+    <testcase classname="POST /api/explain returns 400 for unknown chipId" name="POST /api/explain returns 400 for unknown chipId" time="0.008">
+    </testcase>
+    <testcase classname="POST /api/chat returns 400 for missing required fields" name="POST /api/chat returns 400 for missing required fields" time="0.057">
+    </testcase>
+    <testcase classname="POST /api/chat returns 400 for empty question" name="POST /api/chat returns 400 for empty question" time="0.003">
+    </testcase>
+    <testcase classname="POST /api/chat returns 400 for question exceeding 2000 chars" name="POST /api/chat returns 400 for question exceeding 2000 chars" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="checkRateLimit" errors="0" failures="0" skipped="0" timestamp="2026-04-18T05:36:15" time="0.011" tests="6">
+    <testcase classname="checkRateLimit first request is always allowed" name="checkRateLimit first request is always allowed" time="0">
+    </testcase>
+    <testcase classname="checkRateLimit requests within the window are allowed up to MAX_REQUESTS (10)" name="checkRateLimit requests within the window are allowed up to MAX_REQUESTS (10)" time="0.001">
+    </testcase>
+    <testcase classname="checkRateLimit 11th request within the window is rejected" name="checkRateLimit 11th request within the window is rejected" time="0">
+    </testcase>
+    <testcase classname="checkRateLimit retryAfterMs is positive when rejected" name="checkRateLimit retryAfterMs is positive when rejected" time="0">
+    </testcase>
+    <testcase classname="checkRateLimit requests reset after the window (60s) elapses" name="checkRateLimit requests reset after the window (60s) elapses" time="0">
+    </testcase>
+    <testcase classname="checkRateLimit different IPs are tracked independently" name="checkRateLimit different IPs are tracked independently" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -49,29 +49,29 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.98 0.005 90);
+  --foreground: oklch(0.20 0.02 60);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.20 0.02 60);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.20 0.02 60);
+  --primary: oklch(0.35 0.08 160);
+  --primary-foreground: oklch(0.98 0.005 90);
+  --secondary: oklch(0.95 0.01 90);
+  --secondary-foreground: oklch(0.25 0.02 60);
+  --muted: oklch(0.95 0.01 90);
+  --muted-foreground: oklch(0.50 0.02 60);
+  --accent: oklch(0.92 0.02 80);
+  --accent-foreground: oklch(0.25 0.02 60);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --border: oklch(0.88 0.01 90);
+  --input: oklch(0.88 0.01 90);
+  --ring: oklch(0.45 0.08 160);
+  --chart-1: oklch(0.55 0.12 160);
+  --chart-2: oklch(0.55 0.10 250);
+  --chart-3: oklch(0.60 0.15 45);
+  --chart-4: oklch(0.50 0.12 300);
+  --chart-5: oklch(0.55 0.10 80);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -122,9 +122,54 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
   html {
-    @apply font-sans;
+    @apply font-sans overflow-x-hidden;
   }
+}
+
+@keyframes leaf-float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-28vh) translateX(22px) rotate(90deg);
+  }
+  55% {
+    transform: translateY(-54vh) translateX(-14px) rotate(230deg);
+  }
+  80% {
+    transform: translateY(-78vh) translateX(18px) rotate(390deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-108vh) translateX(4px) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+.animate-leaf-float {
+  animation: leaf-float ease-in-out infinite;
+  background-color: oklch(0.52 0.14 148);
+  opacity: 0;
+}
+
+/* Mask-layer-stack dims when dashboard is active */
+body.dashboard-active .mask-layer-stack {
+  opacity: 0.4;
+}
+
+/* Wafer die pulse animation for locked/selected state */
+@keyframes die-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-die-pulse {
+  animation: die-pulse 2s ease-in-out infinite;
 }

@@ -1,0 +1,160 @@
+{
+  "_comment": "Per-process-family environmental coefficients, calibrated to published anchor data. ALL numbers are ILLUSTRATIVE estimates for a weekend educational tool — they are derived from published aggregate data and industry averages, not from foundry-specific measurements. See methodology in sources.json.",
+  "_units": {
+    "waterL": "liters of ultrapure water per process step per 300mm wafer",
+    "energyKwh": "kilowatt-hours of electricity per process step per 300mm wafer (includes tool power, amortized facility overhead)",
+    "ghgScope2KgCo2e": "kg CO2e per process step per wafer from electricity (at global industry-avg grid intensity ~0.42 kg CO2e/kWh, 2023)",
+    "pfasKgCo2e": "kg CO2e per process step per wafer from fluorinated GHG emissions after typical abatement (~95% DRE)"
+  },
+  "_calibration": {
+    "anchor1": "IMEC reports ~1,600 kg CO2eq per wafer for advanced N2 logic (imec-digest-2025). Etch + litho ≈ 40% of that. Scope 2 (electricity) ≈ 60% of total.",
+    "anchor2": "Hu 2023 industry avg: 8.22 L water / cm2 silicon. For a 300mm wafer (~700 cm2 usable), that's ~5,750 L per wafer across all process steps.",
+    "anchor3": "Bardon 2020 scaling: N28 to N2 shows 3.46x electricity, 2.3x water, 2.5x GHG per wafer.",
+    "note": "Per-step values below assume a representative step count for a ~7nm node flow (~1,200 process steps total, ~80 masks). Users of this data should treat values as order-of-magnitude correct for educational comparison, not as audit-grade."
+  },
+  "processes": [
+    {
+      "id": "euv-litho",
+      "name": "EUV Lithography",
+      "family": "lithography",
+      "description": "Extreme Ultraviolet lithography at 13.5nm wavelength. Used for critical layers at N7 and below. ~5-20 EUV layers per advanced node.",
+      "perStepPerWafer": {
+        "waterL": { "value": 5, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 7.6, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 3.2, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.05, "sourceId": "sia-2023-plasma", "confidence": "low" }
+      },
+      "notes": "EUV tools (ASML NXE/EXE series) draw ~1 MW each and have lower wafers-per-hour throughput than DUV, making per-wafer energy dramatically higher. Water use is mainly cooling and optics conditioning, not wafer immersion."
+    },
+    {
+      "id": "duv-litho",
+      "name": "DUV Lithography (193nm immersion)",
+      "family": "lithography",
+      "description": "193nm immersion lithography for non-critical layers. Used heavily in multi-patterning at older nodes.",
+      "perStepPerWafer": {
+        "waterL": { "value": 4, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 2.0, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 0.85, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.02, "sourceId": "sia-2023-plasma", "confidence": "low" }
+      },
+      "notes": "Uses water as immersion fluid between lens and wafer. Throughput ~2-3x higher than EUV, so per-wafer energy is lower."
+    },
+    {
+      "id": "plasma-etch",
+      "name": "Plasma Dry Etch",
+      "family": "etch",
+      "description": "Fluorine-chemistry plasma etching to pattern critical features. Uses CF4, C4F8, SF6, CHF3. Primary source of F-gas emissions.",
+      "perStepPerWafer": {
+        "waterL": { "value": 2, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 3.6, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 1.5, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 2.4, "sourceId": "pirson-2023", "confidence": "medium" }
+      },
+      "notes": "Despite ~95% abatement (destruction/removal efficiency), etch remains the top GHG contributor due to high-GWP gases. SF6 has GWP100 of 25,200. CF4 has atmospheric lifetime of 50,000 years. PFAS regulation is placing this process family under increasing scrutiny."
+    },
+    {
+      "id": "cvd-clean",
+      "name": "CVD Chamber Clean (NF3)",
+      "family": "clean",
+      "description": "NF3 remote plasma clean of CVD chamber walls between depositions. High utilization efficiency (~98%) but NF3 itself has GWP100 of 17,400.",
+      "perStepPerWafer": {
+        "waterL": { "value": 1.5, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 2.6, "sourceId": "imec-digest-2025", "confidence": "low" },
+        "ghgScope2KgCo2e": { "value": 1.1, "sourceId": "imec-digest-2025", "confidence": "low" },
+        "pfasKgCo2e": { "value": 1.1, "sourceId": "pirson-2023", "confidence": "medium" }
+      },
+      "notes": "The industry switched from C2F6 to NF3 for chamber cleaning because NF3 has higher utilization (~98% vs ~30%), dramatically reducing emitted GHGs despite NF3's own high GWP. SK Hynix reported optimizing 13 NF3 processes reduced emissions by ~12,000 tCO2e/year (2023)."
+    },
+    {
+      "id": "wet-clean",
+      "name": "Wet Clean / Wet Bench",
+      "family": "clean",
+      "description": "Ultrapure water rinsing of wafers between major process steps. Dominant contributor to water consumption.",
+      "perStepPerWafer": {
+        "waterL": { "value": 20, "sourceId": "hu2023", "confidence": "high" },
+        "energyKwh": { "value": 0.6, "sourceId": "hu2023", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 0.25, "sourceId": "hu2023", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.0, "sourceId": "epa-semi", "confidence": "high" }
+      },
+      "notes": "Wet cleans happen after nearly every major step, often 100-200 per wafer. A single advanced-node wafer can consume 5,000-7,000 liters of ultrapure water across its full process flow, dominated by these rinse steps."
+    },
+    {
+      "id": "pvd",
+      "name": "Physical Vapor Deposition (Sputtering)",
+      "family": "deposition",
+      "description": "Sputtering of metals (Cu, Ti, TiN, Ta, TaN) for interconnect barriers and seed layers.",
+      "perStepPerWafer": {
+        "waterL": { "value": 2, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 1.55, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 0.65, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.01, "sourceId": "sia-2023-plasma", "confidence": "low" }
+      },
+      "notes": "PVD generally uses minimal fluorinated gases; environmental cost is dominated by electricity and inert process gas (Ar) supply."
+    },
+    {
+      "id": "cvd-ald",
+      "name": "Chemical Vapor Deposition / Atomic Layer Deposition",
+      "family": "deposition",
+      "description": "Conformal thin-film deposition (SiO2, SiN, high-k dielectrics, W, TiN). ALD used for thinnest, most uniform films at advanced nodes.",
+      "perStepPerWafer": {
+        "waterL": { "value": 2, "sourceId": "bardon2020", "confidence": "medium" },
+        "energyKwh": { "value": 2.0, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 0.85, "sourceId": "imec-digest-2025", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.2, "sourceId": "pirson-2023", "confidence": "low" }
+      },
+      "notes": "ALD step counts explode at advanced nodes (gate-all-around structures, multi-patterning spacers). Each ALD step is small, but hundreds of them add up."
+    },
+    {
+      "id": "cmp",
+      "name": "Chemical Mechanical Planarization",
+      "family": "cmp",
+      "description": "Polishing of wafer surface after metal deposition or oxide fill. Uses large volumes of slurry (abrasive + chemistry) and DI water for post-CMP cleans.",
+      "perStepPerWafer": {
+        "waterL": { "value": 15, "sourceId": "hu2023", "confidence": "medium" },
+        "energyKwh": { "value": 1.3, "sourceId": "bardon2020", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 0.55, "sourceId": "bardon2020", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.02, "sourceId": "sia-2023-plasma", "confidence": "low" }
+      },
+      "notes": "CMP water use is dominated by post-CMP rinses (the wafer arrives coated in slurry and must be rinsed to atomic cleanliness). Some modern CMP slurries contain PFAS-class chemistries under regulatory scrutiny."
+    },
+    {
+      "id": "implant",
+      "name": "Ion Implantation",
+      "family": "implant",
+      "description": "Ion beam doping to introduce B, P, As into silicon. Vacuum-based, low water, moderate energy.",
+      "perStepPerWafer": {
+        "waterL": { "value": 1.0, "sourceId": "bardon2020", "confidence": "low" },
+        "energyKwh": { "value": 0.95, "sourceId": "bardon2020", "confidence": "low" },
+        "ghgScope2KgCo2e": { "value": 0.4, "sourceId": "bardon2020", "confidence": "low" },
+        "pfasKgCo2e": { "value": 0.0, "sourceId": "epa-semi", "confidence": "high" }
+      },
+      "notes": "Implant is one of the least environmentally intensive front-end steps per operation. Uses specialty source gases but in tiny quantities."
+    },
+    {
+      "id": "metrology",
+      "name": "Inspection & Metrology",
+      "family": "metrology",
+      "description": "Optical, e-beam, and scatterometry measurements for defect detection and critical-dimension control.",
+      "perStepPerWafer": {
+        "waterL": { "value": 0.3, "sourceId": "bardon2020", "confidence": "low" },
+        "energyKwh": { "value": 0.33, "sourceId": "bardon2020", "confidence": "low" },
+        "ghgScope2KgCo2e": { "value": 0.14, "sourceId": "bardon2020", "confidence": "low" },
+        "pfasKgCo2e": { "value": 0.0, "sourceId": "epa-semi", "confidence": "high" }
+      },
+      "notes": "Minor per-step footprint, but step counts explode at advanced nodes (every litho and etch pair gets inspected). Worth showing for context."
+    },
+    {
+      "id": "thermal",
+      "name": "Thermal Processing (Anneal, Oxidation, Diffusion)",
+      "family": "thermal",
+      "description": "High-temperature steps in furnaces or RTP tools for dopant activation, oxide growth, silicidation.",
+      "perStepPerWafer": {
+        "waterL": { "value": 1.5, "sourceId": "bardon2020", "confidence": "low" },
+        "energyKwh": { "value": 2.6, "sourceId": "bardon2020", "confidence": "medium" },
+        "ghgScope2KgCo2e": { "value": 1.1, "sourceId": "bardon2020", "confidence": "medium" },
+        "pfasKgCo2e": { "value": 0.0, "sourceId": "epa-semi", "confidence": "high" }
+      },
+      "notes": "Thermal steps use significant electricity to maintain furnace and RTP temperatures. Lower step count than litho/etch/clean at advanced nodes but individually energy-heavy."
+    }
+  ]
+}
